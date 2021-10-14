@@ -4,6 +4,8 @@
  */
 
 const path = require("path");
+const bodyParser = require("body-parser");
+require('isomorphic-fetch');
 
 // Require the fastify framework and instantiate it
 const express = require("express");
@@ -13,6 +15,10 @@ var app = express();
 var port = process.env.PORT || 3000;
 // Setup our static files
 app.use(express.static("public"));
+
+//app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Load and parse SEO data
 const seo = require("./src/seo.json");
@@ -66,21 +72,20 @@ app.post("/", function(request, reply) {
   reply.view("/src/pages/index.hbs", params);
 });
 
-app.post("/API/emmisions", async function(request, reply) {
-  
-  await fetch('//http://api.eia.gov/category/?api_key=${process.env.SECRET}&category_id=2251609')
-  .then((response) => {
-    return response.json();
-  })
-  .then((myJson) => {
-    console.log(myJson);
-  });
-  
+app.post("/API/emmisions", function(request, response) {
+  console.log(request.body);
+  fetch(
+    "http://api.eia.gov/category/?api_key=${process.env.SECRET}&category_id=2251609"
+  )
+    .then(response => {
+      return response.json();
+    })
+    .then(myJson => {
+      console.log(myJson);
+      response.send(myJson);
+    })
+    .catch(err => console.log(err));
 });
-
-
-
-
 
 // Run the server and report out to the logs
 

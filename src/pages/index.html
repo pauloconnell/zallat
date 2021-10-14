@@ -33,17 +33,22 @@
     <div class="wrapper">
       <div class="content" role="main">
         <!-- This is the start of content for our page -->
-        <h1 class="title">Hello Node!</h1>
+        <h1 class="title">Zallat Code Test</h1>
 
         <!-- Add text indicating that we've changed color OR had an error -->
 
-        <div class="color-form">
+        <div class="form1">
+          Part 1.
+          <h2>
+            Electric power carbon dioxide emission quantity from State
+          
+          </h2>
           <!-- The "What's your favorite color?" form sends a POST request to the server
                Check server.js to see how it works -->
           <form action="/api/emmisions" method="POST">
             <label for="state">
               <!-- We use the handlebars "#if" statement so the form can adapt to its situation -->
-              Electric power carbon dioxide emission quantity from State
+              Select State:
             </label>
             <select name="state" id="dropDownState">
               <option value="alabama">Alabama</option>
@@ -53,13 +58,61 @@
               <option value="california">California</option>
             </select>
             <br />
-            <label for="dateFrom">Select From Date</label>
+            <label for="date">Select Year:</label>
 
-            <input type="date" value="dateFrom" />
+
             <input type="number" min="1900" max="2099" step="1" value="2016" />
             <br />
-            <label for="dateTo"> Select To Date</label>
-            <input type="date" value="dateTo" />
+
+            <br />
+            <input type="submit" value="Submit" />
+          </form>
+
+          <!-- If the user submits a value through the form 
+         
+            <button type="submit">Submit</button>
+          </form>
+         
+        it'll be passed to the server in the request body  -->
+        </div>
+        
+        <div class="form1" id="yearlyAmount">
+         Part 1: Your result will be displayed here:
+        </div>
+        <br/>
+        <br/>
+        <div class="form2">
+          Part 2.
+          <h2>
+            Cost for Electric power carbon dioxide emissions by State
+          
+          </h2>
+          <!-- The "What's your favorite color?" form sends a POST request to the server
+               Check server.js to see how it works -->
+          <form action="/api/cost" method="POST">
+            <label for="state">
+              <!-- We use the handlebars "#if" statement so the form can adapt to its situation -->
+              Select State:
+            </label>
+            <select name="state" id="dropDownState">
+              <option value="alabama">Alabama</option>
+              <option value="alaska">Alaska</option>
+              <option value="arizona">Arizona</option>
+              <option value="arkansas">Arkansas</option>
+              <option value="california">California</option>
+            </select>
+            <br />
+            
+            
+            
+            
+            <label for="dateFrom">Select From Date:</label>
+
+
+            <input type="number" min="1900" max="2099" step="1" value="2016" />
+            <br />
+            <label for="dateTo"> Select To Date:</label>
+
             <input type="number" min="1900" max="2099" step="1" value="2016" />
 
             <br />
@@ -72,6 +125,9 @@
           </form>
          
         it'll be passed to the server in the request body  -->
+        </div>
+        <div class="form1" id="yearlyAmount">
+         Part 2: Your result will be displayed here:
         </div>
 
         <div class="illo-container">
