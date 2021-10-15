@@ -41,7 +41,6 @@
           Part 1.
           <h2>
             Electric power carbon dioxide emission quantity from State
-          
           </h2>
           <!-- The "What's your favorite color?" form sends a POST request to the server
                Check server.js to see how it works -->
@@ -51,17 +50,16 @@
               Select State:
             </label>
             <select name="state" id="dropDownState">
-              <option value="alabama">Alabama</option>
-              <option value="alaska">Alaska</option>
-              <option value="arizona">Arizona</option>
-              <option value="arkansas">Arkansas</option>
-              <option value="california">California</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
             </select>
             <br />
             <label for="date">Select Year:</label>
 
-
-            <input type="number" min="1900" max="2099" step="1" value="2016" />
+            <input type="number" min="1980" max="2018" step="1" name="year" value="2016" />
             <br />
 
             <br />
@@ -75,17 +73,17 @@
          
         it'll be passed to the server in the request body  -->
         </div>
-        
+
         <div class="form1" id="yearlyAmount">
-         Part 1: Your result will be displayed here:
+          Part 1: Your result will be displayed in JSON, just click refresh or
+          back to return here.
         </div>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <div class="form2">
           Part 2.
           <h2>
             Cost for Electric power carbon dioxide emissions by State
-          
           </h2>
           <!-- The "What's your favorite color?" form sends a POST request to the server
                Check server.js to see how it works -->
@@ -95,25 +93,21 @@
               Select State:
             </label>
             <select name="state" id="dropDownState">
-              <option value="alabama">Alabama</option>
-              <option value="alaska">Alaska</option>
-              <option value="arizona">Arizona</option>
-              <option value="arkansas">Arkansas</option>
-              <option value="california">California</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
             </select>
             <br />
-            
-            
-            
-            
+
             <label for="dateFrom">Select From Date:</label>
 
-
-            <input type="number" min="1900" max="2099" step="1" value="2016" />
+            <input type="number" min="1980" max="2018" step="1" value="2016" />
             <br />
             <label for="dateTo"> Select To Date:</label>
 
-            <input type="number" min="1900" max="2099" step="1" value="2016" />
+            <input type="number" min="1980" max="2018" step="1" value="2016" />
 
             <br />
             <input type="submit" value="Submit" />
@@ -127,7 +121,8 @@
         it'll be passed to the server in the request body  -->
         </div>
         <div class="form1" id="yearlyAmount">
-         Part 2: Your result will be displayed here:
+          Part 2: Your result will be displayed in JSON, just click refresh or
+          back to return here.
         </div>
 
         <div class="illo-container">

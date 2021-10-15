@@ -5,7 +5,8 @@
 
 const path = require("path");
 const bodyParser = require("body-parser");
-require('isomorphic-fetch');
+require("isomorphic-fetch");
+require("dotenv").config();
 
 // Require the fastify framework and instantiate it
 const express = require("express");
@@ -29,28 +30,12 @@ if (seo.url === "glitch-default") {
 /**
  * Our home page route
  *
- * Returns src/pages/index.hbs with data built into it
+
  */
 app.get("/", function(request, response) {
   // params is an object we'll pass to our handlebars template
   let params = { seo: seo };
 
-  // If someone clicked the option for a random color it'll be passed in the querystring
-  if (request.query.randomize) {
-    // We need to load our color data file, pick one at random, and add it to the params
-    const colors = require("./src/colors.json");
-    const allColors = Object.keys(colors);
-    let currentColor = allColors[(allColors.length * Math.random()) << 0];
-
-    // Add the color properties to the params object
-    params = {
-      color: colors[currentColor],
-      colorError: null,
-      seo: seo
-    };
-  }
-
-  // The Handlebars code will be able to access the parameter values and build them into the page
   response.sendFile(__dirname + "/src/pages/index.html");
 });
 
@@ -74,15 +59,35 @@ app.post("/", function(request, reply) {
 
 app.post("/API/emmisions", function(request, response) {
   console.log(request.body);
-  fetch(
-    "http://api.eia.gov/category/?api_key=${process.env.SECRET}&category_id=2251609"
-  )
+  var sentState = request.body.state;
+  console.log("key is ", process.env.MYKEY, "state is ", sentState);
+  let apiUrl =
+    "http://api.eia.gov/series/?api_key=" +
+    process.env.SECRET +
+    "&series_id=EMISS.CO2-TOTV-EC-CO-" +
+    sentState +
+    ".A";
+  let oldUrl =
+    "http://api.eia.gov/category/?api_key=" +
+    process.env.MYKEY +
+    "&category_id=2251609";
+  var finalAnswer=0;
+  fetch(apiUrl)
     .then(response => {
       return response.json();
     })
     .then(myJson => {
-      console.log(myJson);
-      response.send(myJson);
+      console.log("recieved: ",JSON.stringify(myJson.series[0].data));
+     let myData=myJson.series[0].data.forEach((year)=>{
+       console.log("checking",year);
+       if (year[0]==request.body.year){
+         console.log("found year ", year);
+         finalAnswer=year[1];
+       }
+     });
+    // let answerIndex=myData.indexOf(request.body.year);
+    // console.log("answer is ", answerIndex,JSON.stringify(myData[answerIndex]));
+      response.json(finalAnswer);
     })
     .catch(err => console.log(err));
 });
