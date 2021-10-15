@@ -1,6 +1,9 @@
 dependencies:
+  body-parser: 1.19.0
   css-loader: 6.4.0
+  dotenv: 10.0.0
   express: 4.17.1
+  isomorphic-fetch: 3.0.0
   webpack: 5.58.2
 packages:
   /@types/eslint-scope/3.7.1:
@@ -308,6 +311,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
+  /dotenv/10.0.0:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
   /ee-first/1.1.1:
     dev: false
     resolution:
@@ -528,6 +537,13 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==
+  /isomorphic-fetch/3.0.0:
+    dependencies:
+      node-fetch: 2.6.5
+      whatwg-fetch: 3.6.2
+    dev: false
+    resolution:
+      integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==
   /jest-worker/27.2.5:
     dependencies:
       '@types/node': 16.11.0
@@ -626,6 +642,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+  /node-fetch/2.6.5:
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
+    engines:
+      node: 4.x || >=6.0.0
+    resolution:
+      integrity: sha512-mmlIVHJEu5rnIxgEgez6b9GgWXbkZj5YZ7fx+2r94a2E+Uirsp6HsPTPlomfdHtpt/B0cdKviwkoaM6pyvUOpQ==
   /node-releases/2.0.0:
     dev: false
     resolution:
@@ -929,6 +953,10 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
+  /tr46/0.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=
   /type-is/1.6.18:
     dependencies:
       media-typer: 0.3.0
@@ -975,6 +1003,10 @@ packages:
       node: '>=10.13.0'
     resolution:
       integrity: sha512-up4YAn/XHgZHIxFBVCdlMiWDj6WaLKpwVeGQk2I5thdYxF/KmF0aaz6TfJZ/hfl1h/XlcDr7k1KH7ThDagpFaA==
+  /webidl-conversions/3.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=
   /webpack-sources/3.2.1:
     dev: false
     engines:
@@ -1013,6 +1045,17 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-3S6e9Vo1W2ijk4F4PPWRIu6D/uGgqaPmqw+av3W3jLDujuNkdxX5h5c+RQ6GkjVR+WwIPOfgY8av+j5j4tMqJw==
+  /whatwg-fetch/3.6.2:
+    dev: false
+    resolution:
+      integrity: sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
+  /whatwg-url/5.0.0:
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
+    dev: false
+    resolution:
+      integrity: sha1-lmRU6HZUYuN2RNNib2dCzotwll0=
   /yallist/4.0.0:
     dev: false
     resolution:
@@ -1027,6 +1070,9 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  body-parser: ^1.19.0
   css-loader: ^6.4.0
+  dotenv: ^10.0.0
   express: ^4.17.1
+  isomorphic-fetch: ^3.0.0
   webpack: ^5.58.0
