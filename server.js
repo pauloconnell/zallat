@@ -71,23 +71,65 @@ app.post("/API/emmisions", function(request, response) {
     "http://api.eia.gov/category/?api_key=" +
     process.env.MYKEY +
     "&category_id=2251609";
-  var finalAnswer=0;
+  var finalAnswer = 0;
   fetch(apiUrl)
     .then(response => {
       return response.json();
     })
     .then(myJson => {
-      console.log("recieved: ",JSON.stringify(myJson.series[0].data));
-     let myData=myJson.series[0].data.forEach((year)=>{
-       console.log("checking",year);
-       if (year[0]==request.body.year){
-         console.log("found year ", year);
-         finalAnswer=year[1];
-       }
-     });
-    // let answerIndex=myData.indexOf(request.body.year);
-    // console.log("answer is ", answerIndex,JSON.stringify(myData[answerIndex]));
+      console.log("recieved: ", JSON.stringify(myJson.series[0].data));
+      myJson.series[0].data.forEach(year => {
+        console.log("checking", year);
+        if (year[0] == request.body.year) {
+          console.log("found year ", year);
+          finalAnswer = year[1];
+        }
+      });
+      // let answerIndex=myData.indexOf(request.body.year);
+      // console.log("answer is ", answerIndex,JSON.stringify(myData[answerIndex]));
       response.json(finalAnswer);
+    })
+    .catch(err => console.log(err));
+});
+
+app.post("/API/cost", function(request, response) {
+  console.log(request.body);
+  var sentState = request.body.state;
+  console.log("key is ", process.env.MYKEY, "state is ", sentState);
+  let apiUrl =
+    "http://api.eia.gov/series/?api_key=" +
+    process.env.SECRET +
+    "&series_id=EMISS.CO2-TOTV-EC-CO-" +
+    sentState +
+    ".A";
+
+  var finalAnswer = [];
+  fetch(apiUrl)
+    .then(response => {
+      return response.json();
+    })
+    .then(myJson => {
+      console.log("recieved: ", JSON.stringify(myJson.series[0].data));
+      myJson.series[0].data.forEach(year => {
+        console.log("checking", year);
+        if ((year[0] >= request.body.fromYear)&&(year[0]<=request.body.toYear)) {
+          
+          console.log("found year ", year);
+          finalAnswer.push(year[1]);
+        }
+      });
+    console.log("final answer processing:",finalAnswer);
+      var returnAmount=0;
+      finalAnswer.forEach((item, index)=>{
+        returnAmount+=item;
+        //console.log("check this out",total, num, returnAmount);
+      });
+    console.log("calculated:",returnAmount);
+      let returnString=returnAmount.toString();
+    returnString+="Million";
+      // let answerIndex=myData.indexOf(request.body.year);
+      // console.log("answer is ", answerIndex,JSON.stringify(myData[answerIndex]));
+      response.send(returnString);
     })
     .catch(err => console.log(err));
 });
