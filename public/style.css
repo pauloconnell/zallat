@@ -104,7 +104,8 @@ END Glitch hello-app default styles
 
 body {
   font-family: HK Grotesk;
-  background-color: var(--color-bg);
+  background: url(https://res.cloudinary.com/pollie/image/upload/v1634400459/coalPlant_gu01ek.jpg);
+  background-size:cover;
 }
 
 /* Page structure */
@@ -175,7 +176,8 @@ form {
   margin: 0.75rem 0;
 }
 button,
-input, select {
+input,
+select {
   font-family: inherit;
   font-size: 100%;
   background: #FFFFFF;
@@ -200,10 +202,12 @@ h2 {
   color: #2800FF;
 }
 
-.form1, .form2 {
+.form1,
+.form2, .form3 {
   border: 2px solid black;
-  border-radius:5px;
-  padding:15px;
-  margin:5px;
-  max-width:
+  border-radius: 5px;
+  padding: 15px;
+  margin: 5px;
+ background:grey;
+  
 }

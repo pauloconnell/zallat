@@ -11,16 +11,25 @@
     <link rel="icon" href="https://glitch.com/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>{{seo.title}}</title>
+    <title>HR Zallat BackEnd Developer Test</title>
 
     <!-- Meta tags for SEO and social sharing -->
-    <link rel="canonical" href="{{seo.url}}" />
-    <meta name="description" content="{{seo.description}}" />
-    <meta property="og:title" content="{{seo.title}}" />
+    <link rel="canonical" href="https://zallat.glitch.me/" />
+    <meta
+      name="description"
+      content="Node.js Express Server provides API which hits government API to fetch and sort data"
+    />
+    <meta
+      property="og:title"
+      content="Code Test Back End API set up, Vancouver, BC, Canada"
+    />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="{{seo.url}}" />
-    <meta property="og:description" content="{{seo.description}}" />
-    <meta property="og:image" content="{{seo.image}}" />
+    <meta property="og:url" content="https://zallat.glitch.me/" />
+    <meta property="og:description" content="https://zallat.glitch.me/" />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/pollie/image/upload/v1634400459/coalPlant_gu01ek.jpg"
+    />
     <meta name="twitter:card" content="summary" />
 
     <!-- Import the webpage's stylesheet -->
@@ -45,37 +54,83 @@
           <!-- The "What's your favorite color?" form sends a POST request to the server
                Check server.js to see how it works -->
           <form action="/api/emmisions" method="POST">
-            <label for="state">
+            <label for="state1">
               <!-- We use the handlebars "#if" statement so the form can adapt to its situation -->
               Select State:
             </label>
-            <select name="state" id="dropDownState">
+            <select name="state1" id="dropDownState">
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>
               <option value="AR">Arkansas</option>
               <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="CO">Georgia</option>
+              <option value="CT">Hawaii</option>
+              <option value="DE">Idaho</option>
+              <option value="DC">Illinois</option>
+              <option value="FL">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
             </select>
             <br />
-            <label for="date">Select Year:</label>
+            <label for="year">Select Year:</label>
 
-            <input type="number" min="1980" max="2018" step="1" name="year" value="2016" />
+            <input
+              type="number"
+              min="1980"
+              max="2018"
+              step="1"
+              name="year1"
+              value="2016"
+            />
             <br />
 
             <br />
             <input type="submit" value="Submit" />
           </form>
-
-          <!-- If the user submits a value through the form 
-         
-            <button type="submit">Submit</button>
-          </form>
-         
-        it'll be passed to the server in the request body  -->
         </div>
 
         <div class="form1" id="yearlyAmount">
-          Part 1: Your result will be displayed in JSON, just click refresh or
+          Part 1: Your result will be displayed on Screen, just click refresh or
           back to return here.
         </div>
         <br />
@@ -88,26 +143,86 @@
           <!-- The "What's your favorite color?" form sends a POST request to the server
                Check server.js to see how it works -->
           <form action="/api/cost" method="POST">
-            <label for="state">
+            <label for="state2">
               <!-- We use the handlebars "#if" statement so the form can adapt to its situation -->
               Select State:
             </label>
-            <select name="state" id="dropDownState">
+            <select name="state2" id="dropDownState">
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>
               <option value="AR">Arkansas</option>
               <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="CO">Georgia</option>
+              <option value="CT">Hawaii</option>
+              <option value="DE">Idaho</option>
+              <option value="DC">Illinois</option>
+              <option value="FL">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
             </select>
             <br />
 
-            <label for="dateFrom">Select From Date:</label>
+            <label for="fromYear2">Select From Date:</label>
 
-            <input type="number" min="1980" max="2018" step="1" value="2016" />
+            <input
+              type="number"
+              min="1980"
+              max="2018"
+              step="1"
+              name="fromYear2"
+              value="2016"
+            />
             <br />
-            <label for="dateTo"> Select To Date:</label>
+            <label for="toYear2"> Select To Date:</label>
 
-            <input type="number" min="1980" max="2018" step="1" value="2016" />
+            <input
+              type="number"
+              min="1980"
+              max="2018"
+              step="1"
+              name="toYear2"
+              value="2017"
+            />
 
             <br />
             <input type="submit" value="Submit" />
@@ -120,30 +235,120 @@
          
         it'll be passed to the server in the request body  -->
         </div>
-        <div class="form1" id="yearlyAmount">
-          Part 2: Your result will be displayed in JSON, just click refresh or
+
+        <div class="form2">
+          Part 2: Your result will be displayed on screen, just click refresh or
           back to return here.
         </div>
 
-        <div class="illo-container">
-          <img
-            src="https://cdn.glitch.com/c62efef6-1e75-45cf-b248-afeccdda9477%2Fillustration.svg?v=1618196069568"
-            class="illustration"
-            alt="Node logo"
-          />
+        <div class="form3">
+          Part 3. <strong>BONUS:</strong>
+          <h2>
+            State with Maximum carbon dioxide emissions for Electric Power
+          </h2>
+          <!-- The "What's your favorite color?" form sends a POST request to the server
+               Check server.js to see how it works -->
+          <form action="/api/max" method="POST">
+            <br />
+
+            <label for="fromYear3">Select From Date:</label>
+
+            <input
+              type="number"
+              min="1980"
+              max="2018"
+              step="1"
+              name="fromYear3"
+              value="2016"
+            />
+            <br />
+            <label for="toYear3"> Select To Date:</label>
+
+            <input
+              type="number"
+              min="1980"
+              max="2018"
+              step="1"
+              name="toYear3"
+              value="2017"
+            />
+
+            <br />
+            <input type="submit" value="Submit" />
+          </form>
         </div>
 
-        <!-- Instructions on using this project -->
-        <div class="instructions">
-          <h2>
-            Using this project
-          </h2>
-          <p>
-            This is the Glitch <strong>Hello Node</strong> project. You can use
-            it to build your own app. Check out README.md in the editor for more
-            info and next steps you can take!
-          </p>
+        <div class="form3">
+          Part 3 <strong>Extra bonus</strong>
+
+          Add additional state's data to the DataBase: Select which state to add
+          and click submit. The data from that state will be pulled and added to
+          Database for part 3.
+
+          <form action="/api/add" method="POST">
+            <label for="state3b">
+              <!-- We use the handlebars "#if" statement so the form can adapt to its situation -->
+              Select State:
+            </label>
+            <select name="state3b" id="dropDownState">
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="CO">Georgia</option>
+              <option value="CT">Hawaii</option>
+              <option value="DE">Idaho</option>
+              <option value="DC">Illinois</option>
+              <option value="FL">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+
+            <br />
+            <input type="submit" value="Submit" />
+          </form>
         </div>
+        <br />
       </div>
     </div>
     <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
