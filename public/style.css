@@ -2,9 +2,7 @@
 START Glitch hello-app default styles
 
 The styles in this section do some minimal CSS resets, set default fonts and 
-colors, and handle the layout for our footer and "Remix on Glitch" button. If
-you're new to CSS they may seem a little complicated, but you can scroll down
-to this section's matching END comment to see page-specific styles.
+colors, and handle the layout for our footer and "Remix on Glitch" button. 
 ******************************************************************************/
 /* Our default values set as CSS variables */
 :root {
@@ -105,7 +103,7 @@ END Glitch hello-app default styles
 body {
   font-family: HK Grotesk;
   background: url(https://res.cloudinary.com/pollie/image/upload/v1634400459/coalPlant_gu01ek.jpg);
-  background-size:cover;
+  background-size: cover;
 }
 
 /* Page structure */
@@ -124,6 +122,11 @@ body {
 
 p {
   font-size: 1.25rem;
+}
+
+h1,
+h2 {
+  text-align: center;
 }
 
 /* Title h1 style */
@@ -203,11 +206,11 @@ h2 {
 }
 
 .form1,
-.form2, .form3 {
+.form2,
+.form3 {
   border: 2px solid black;
   border-radius: 5px;
   padding: 15px;
   margin: 5px;
- background:grey;
-  
+  background: grey;
 }
