@@ -1,10 +1,34 @@
-# Hello Node!
+# HR Zallat Code Test
 
 
 
 
 
-## Prerequisites
+## Challenge Questions:
+
+Challenge Question for Junior Backend Developer  
+Please use the child series from this page (CO2 emission from Coal consumption for Electrical 
+power production) as reference: 
+https://www.eia.gov/opendata/qb.php?category=2251609 
+ 
+Key: (hidden in .env)
+ 
+Please use the following 3rd party API to create an express.js base API so that: 
+1. Can return “Electric power carbon dioxide emission quantity from some state from 
+some year”.  
+a. For example: given params of year:2000, state:California. It should return 
+2.103701 
+2. If for each million metric tons of “Electric power carbon dioxide emission” from coal 
+consumed, the state government need to pay tax of 1 million dollars. Please create an 
+API that with params of from, to, state, that returns the total tax that the state 
+government paid in that period.  
+a. For example: given from: 2003, to:2006, state: California. It should return 
+8.306344million or 8.3 million 
+ 
+3. (Bonus) Please create a NOSQL MongoDB in any cloud. To save at least 5 set data from 
+child series on this page: https://www.eia.gov/opendata/qb.php?category=2251609 
+And add another end point that can return the state that has the highest CO2 emission 
+in a given period (from, to will be given as params)
 
 
 
@@ -20,23 +44,10 @@
 
 ← `src/`: This folder holds the homepage 
 
-← `src/pages/index.hbs`: This is the main page template for your site. The template receives parameters from the server script, which it includes in the page HTML. The page sends the user submitted color value in the body of a request, or as a query parameter to choose a random color.
+← `src/seo.json`: can change SEO/meta settings in here.
 
-← `src/colors.json`: A collection of CSS color names. We use this in the server script to pick a random color, and to match searches against color names.
-
-← `src/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
-
-## Try this next 🏗️
-
-Take a look in `TODO.md` for next steps you can try out in your new site!
-
-___Want a minimal version of this project to build your own Node.js app? Check out [Blank Node](https://glitch.com/edit/#!/remix/glitch-blank-node)!___
-
-![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
 
 ## You built this with Glitch!
 
 [Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
 
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
