@@ -121,7 +121,7 @@ app.get("/", function(request, response) {
 app.post("/API/emmisions", function(request, response) {
   console.log(request.body);
   var sentState = request.body.state1;
-  console.log("key is ", process.env.MYKEY, "state is ", sentState);
+  console.log("state is ", sentState);
   let apiUrl =
     "http://api.eia.gov/series/?api_key=" +
     process.env.SECRET +
@@ -155,8 +155,11 @@ app.post("/API/emmisions", function(request, response) {
 // this API endpoint calculates the cost of the CO2 emissions for years selected ( Part 2 of Challenge)
 app.post("/API/cost", function(request, response) {
   console.log(request.body);
+  if (request.body.fromYear2 > request.body.toYear2) {
+    response.send("'From' year must be before 'to' year, Please re-try");
+  }
   var sentState = request.body.state2;
-  console.log("key is ", process.env.MYKEY, "state is ", sentState);
+  console.log("state is ", sentState);
   let apiUrl =
     "http://api.eia.gov/series/?api_key=" +
     process.env.SECRET +
@@ -196,9 +199,23 @@ app.post("/API/cost", function(request, response) {
     .catch(err => console.log(err));
 });
 
+// this is the endpoint that will hit DB to determine state with most emissions over this period
+app.post("/API/max", function(request, response) {
+  let answer = findMaxEmissions(function(err, result) {
+    // add request.body.toDate3 & frontDate3
+    if (err) {
+      console.log(err);
+    }
+    if (result) {
+      return response.json(result);
+    }
+  });
+});
+
 // this API endpoint automates loading state data into the database to prep for PART 3 of Challenge
-app.get("/API/add/:state?", async function(request, response) {
-  var { state } = request.query;
+app.post("/API/add", async function(request, response) {
+  var state = request.body.state3b;
+
   if (state) {
     // check if we already have this data in database
     var haveData = false;
@@ -271,18 +288,6 @@ app.get("/API/add/:state?", async function(request, response) {
   } else response.send("no State Selected");
 });
 
-// this is the endpoint that will hit DB to determine state with most emissions over this period
-app.post("/API/max", function(request, response) {
-  let answer = findMaxEmissions(function(err, result) {
-    // add request.body.toDate3 & frontDate3
-    if (err) {
-      console.log(err);
-    }
-    if (result) {
-      return response.json(result);
-    }
-  });
-});
 // Run the server and report out to the logs
 
 // listen for requests :)
