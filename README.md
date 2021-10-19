@@ -40,6 +40,23 @@ in a given period (from, to will be given as params)
 
 ← `server.js`: The **Node.js** server script for this site. The JavaScript defines the API endpoints in the site back-end
 
+## Helper DB Functions:
+To avoid slowing down server when accessing DB:
+ #### checkForStateData
+- Extra Bonus: I built an API to automate adding data to DB, so this ensures no duplicate data is saved to DB<br>
+ #### addStateData
+ this function adds the data from gov't API to the DB<br>
+ #### findMaxEmissions 
+ - bonus section - hits DB and finds max emission & state for time period given<br>
+
+## API routes are:
+ /API/emmissions   -PT 1 -  finds emissions for selected state in selected year<br>
+ /API/cost         -PT 2 -  finds cost of emissions for selected state across years selected <br>
+ /API/max          -Pt 3 - finds state in DataBase with max emissions over years selected<br>
+ /API/add          -Pt 3 extra - automates adding state data to database<br>
+
+
+
 ← `package.json`: The NPM packages for this project's dependencies.
 
 ← `src/`: This folder holds the homepage 
