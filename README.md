@@ -1,42 +1,70 @@
-# Hello Node!
+# HR Zallat Code Test
 
-This project includes a Node.js server script and a web page that connects to it. The front-end page presents a form the visitor can use to submit a color name, sending the submitted value to the back-end API running on the server. The server returns info to the page that allows it to update the display with the chosen color. 🎨
 
-[Node.js](https://nodejs.org/en/about/) is a popular runtime that lets you run server-side JavaScript. This project uses the [Fastify](https://www.fastify.io/) framework and explores basic templating with [Handlebars](https://handlebarsjs.com/).
 
-## Prerequisites
 
-You'll get best use out of this project if you're familiar with basic JavaScript. If you've written JavaScript for client-side web pages this is a little different because it uses server-side JS, but the syntax is the same!
+
+## Challenge Questions:
+
+Challenge Question for Junior Backend Developer  
+Please use the child series from this page (CO2 emission from Coal consumption for Electrical 
+power production) as reference: 
+https://www.eia.gov/opendata/qb.php?category=2251609 
+ 
+Key: (hidden in .env)
+ 
+Please use the following 3rd party API to create an express.js base API so that: 
+1. Can return “Electric power carbon dioxide emission quantity from some state from 
+some year”.  
+a. For example: given params of year:2000, state:California. It should return 
+2.103701 
+2. If for each million metric tons of “Electric power carbon dioxide emission” from coal 
+consumed, the state government need to pay tax of 1 million dollars. Please create an 
+API that with params of from, to, state, that returns the total tax that the state 
+government paid in that period.  
+a. For example: given from: 2003, to:2006, state: California. It should return 
+8.306344million or 8.3 million 
+ 
+3. (Bonus) Please create a NOSQL MongoDB in any cloud. To save at least 5 set data from 
+child series on this page: https://www.eia.gov/opendata/qb.php?category=2251609 
+And add another end point that can return the state that has the highest CO2 emission 
+in a given period (from, to will be given as params)
+
+
 
 ## What's in this project?
 
-← `README.md`: That’s this file, where you can tell people what your cool website does and how you built it.
+← `README.md`: That’s this file, 
 
-← `public/style.css`: The styling rules for the pages in your site.
+← `public/style.css`: The styling rules for the pages in this site.
 
-← `server.js`: The **Node.js** server script for your new site. The JavaScript defines the endpoints in the site back-end, one to return the homepage and one to update with the submitted color. Each one sends data to a Handlebars template which builds these parameter values into the web page the visitor sees.
+← `server.js`: The **Node.js** server script for this site. The JavaScript defines the API endpoints in the site back-end
 
-← `package.json`: The NPM packages for your project's dependencies.
+## Helper DB Functions:
+To avoid slowing down server when accessing DB:
+ #### checkForStateData
+- Extra Bonus: I built an API to automate adding data to DB, so this ensures no duplicate data is saved to DB<br>
+ #### addStateData
+ this function adds the data from gov't API to the DB<br>
+ #### findMaxEmissions 
+ - bonus section - hits DB and finds max emission & state for time period given<br>
 
-← `src/`: This folder holds the site template along with some basic data files.
+## API routes are:
+ /API/emmissions   -PT 1 -  finds emissions for selected state in selected year<br>
+ /API/cost         -PT 2 -  finds cost of emissions for selected state across years selected <br>
+ /API/max          -Pt 3 - finds state in DataBase with max emissions over years selected<br>
+ /API/add          -Pt 3 extra - automates adding state data to database<br>
 
-← `src/pages/index.hbs`: This is the main page template for your site. The template receives parameters from the server script, which it includes in the page HTML. The page sends the user submitted color value in the body of a request, or as a query parameter to choose a random color.
 
-← `src/colors.json`: A collection of CSS color names. We use this in the server script to pick a random color, and to match searches against color names.
 
-← `src/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
+← `package.json`: The NPM packages for this project's dependencies.
 
-## Try this next 🏗️
+← `src/`: This folder holds the homepage 
 
-Take a look in `TODO.md` for next steps you can try out in your new site!
+← `src/seo.json`: can change SEO/meta settings in here.
 
-___Want a minimal version of this project to build your own Node.js app? Check out [Blank Node](https://glitch.com/edit/#!/remix/glitch-blank-node)!___
-
-![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
 
 ## You built this with Glitch!
 
 [Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
 
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.

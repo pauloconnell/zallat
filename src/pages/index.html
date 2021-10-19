@@ -17,7 +17,7 @@
     <link rel="canonical" href="https://zallat.glitch.me/" />
     <meta
       name="description"
-      content="Node.js Express Server provides API which hits government API to fetch and sort data"
+      content="Node.js Express Server provides API which hits government API to fetch and sort c02 emissions data for USA"
     />
     <meta
       property="og:title"
@@ -25,7 +25,10 @@
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://zallat.glitch.me/" />
-    <meta property="og:description" content="https://zallat.glitch.me/" />
+    <meta
+      property="og:description"
+      content="Node.js Express Server provides API which hits government API to fetch and sort c02 emissions data for USA"
+    />
     <meta
       property="og:image"
       content="https://res.cloudinary.com/pollie/image/upload/v1634400459/coalPlant_gu01ek.jpg"
@@ -42,13 +45,22 @@
     <div class="wrapper">
       <div class="content" role="main">
         <!-- This is the start of content for our page -->
-        <h1 class="title">Zallat Code Test</h1>
-
+        <h1 class="title center">HR Zallat Code Test</h1>
+        <h2 class="smallCaps">
+          Backend APIs built using Node and Express by <br />
+          <strong
+            ><a
+              title="click to see my Profile"
+              href="https://paul-profile.glitch.me/"
+              >Paul O'Connell</a
+            ></strong
+          >
+        </h2>
         <!-- Add text indicating that we've changed color OR had an error -->
 
         <div class="form1">
           Part 1.
-          <h2>
+          <h2 class="center">
             Electric power carbon dioxide emission quantity from State
           </h2>
           <!-- The "What's your favorite color?" form sends a POST request to the server
@@ -282,8 +294,9 @@
           Part 3 <strong>Extra bonus</strong>
 
           Add additional state's data to the DataBase: Select which state to add
-          and click submit. The data from that state will be pulled and added to
-          Database for part 3.
+          and click submit.<br />
+          The data from that state will be pulled and added to Database for part
+          3.
 
           <form action="/api/add" method="POST">
             <label for="state3b">
